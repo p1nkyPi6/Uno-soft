@@ -1,0 +1,244 @@
+@import url(../css/style.css);
+@import url(../css/bootstrap.css);
+/*----------------------------------------*/
+/* Colors */
+/*----------------------------------------*/
+/* Text */
+/* Background */
+/* Grid */
+/*----------------------------------------*/
+.row {
+  width: 100%;
+  height: 100%;
+}
+.content-container {
+  display: block;
+  background-color: #ffffff;
+  border: 1px solid #ff0000;
+}
+/*----------------------------------------*/
+/* Функции */
+/*----------------------------------------*/
+/* Выравнивает блок по центру оси Х */
+/* Выравнивает блок по нижнему краю */
+/* Размечает текстовый блок */
+/*----------------------------------------*/
+/* Menu */
+.staic-menu {
+  width: 100%;
+  height: 80px;
+}
+.staic-menu-logo {
+  width: 50px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.staic-menu-system,
+.staic-menu-advantage,
+.staic-menu-about-us,
+.staic-menu-contacts {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 35px;
+}
+.main-header {
+  width: 100%;
+  height: 600px;
+}
+.main-header-img {
+  width: 710px;
+  height: 568px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+.main-header-text {
+  width: 90%;
+  height: 175px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-header-btn {
+  width: 80%;
+  height: 70px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.main-header-btn-text {
+  width: 90%;
+  height: 35px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-system {
+  width: 100%;
+  height: 600px;
+}
+.about-system-header {
+  width: 90%;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-system-text {
+  width: 90%;
+  height: 315px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-system-img {
+  width: 710px;
+  height: 568px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+.partners {
+  width: 100%;
+  height: 400px;
+}
+.partners-header {
+  width: 30%;
+  height: 35px;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.partners-first,
+.partners-second,
+.partners-third {
+  width: 100%;
+  height: 100%;
+}
+.partners-first-img,
+.partners-second-img,
+.partners-third-img {
+  width: 200px;
+  height: 200px;
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.partners-first-text,
+.partners-second-text,
+.partners-third-text {
+  width: 50%;
+  height: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.partners .row-with-offset {
+  height: 330px;
+}
+.competition {
+  width: 100%;
+  height: 600px;
+}
+.competition-header {
+  width: 40%;
+  height: 35px;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.competition-img {
+  width: 100%;
+  height: 480px;
+  margin-top: 35px;
+}
+.about-technology-1 {
+  width: 100%;
+  height: 600px;
+}
+.about-technology-1-header {
+  width: 40%;
+  height: 35px;
+  margin-top: 35px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-technology-1-img {
+  width: 100%;
+  height: 480px;
+  margin-top: 35px;
+}
+.about-technology-2 {
+  width: 100%;
+  height: 600px;
+}
+.about-technology-2-block-1,
+.about-technology-2-block-2 {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-technology-2-block-1-icon,
+.about-technology-2-block-2-icon {
+  width: 50px;
+  height: 50px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about-technology-2-block-1-text,
+.about-technology-2-block-2-text {
+  width: 90%;
+  height: 210px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.benefits-1 {
+  width: 100%;
+  height: 600px;
+}
+.benefits-1-header {
+  width: 40%;
+  height: 35px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.benefits-1 .benefits-1-first,
+.benefits-1 .benefits-1-second,
+.benefits-1 .benefits-1-third {
+  width: 90%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.benefits-1 .benefits-1-first-icon,
+.benefits-1 .benefits-1-second-icon,
+.benefits-1 .benefits-1-third-icon {
+  width: 50px;
+  height: 50px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.benefits-1 .benefits-1-first-header,
+.benefits-1 .benefits-1-second-header,
+.benefits-1 .benefits-1-third-header {
+  width: 90%;
+  height: 70px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.benefits-1 .benefits-1-first-text,
+.benefits-1 .benefits-1-second-text,
+.benefits-1 .benefits-1-third-text {
+  width: 90%;
+  height: 175px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.benefits-1 .row-with-offset {
+  height: 530px;
+}
