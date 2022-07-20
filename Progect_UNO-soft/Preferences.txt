@@ -1,3 +1,0 @@
-cd C:\Users\daniil\Desktop\Progect_UNO-soft\Grid\
-
-browser-sync start --server --files "*.html"
