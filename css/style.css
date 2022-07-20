@@ -1,0 +1,425 @@
+/* Подключение и настройка шрифтов */
+@font-face {
+	font-family: "Montserrat-Regular";
+	src: url(../fonts/Montserrat-Regular.ttf) format(truetype);
+}
+
+@font-face {
+	font-family: "Montserrat-SemiBold";
+	src: url(../fonts/Montserrat-SemiBold.ttf) format(truetype);
+}
+
+@font-face {
+	font-family: "Montserrat-Bold";
+	src: url(../fonts/Montserrat-Bold.ttf) format(truetype);
+}
+
+@font-face {
+	font-family: "OpenSans-SemiBold";
+	src: url(../fonts/Montserrat-SemiBold.ttf) format(truetype);
+}
+
+@font-face {
+	font-family: "OpenSans-Bold";
+	src: url(../fonts/Montserrat-Bold.ttf) format(truetype);
+}
+
+@font-face {
+	font-family: "OpenSans-ExtraBold";
+	src: url(../fonts/Montserrat-ExtraBold.ttf) format(truetype);
+}
+
+h1 {
+	font-family: 'OpenSans-ExtraBold', sans-serif;
+	font-weight: 800;
+	font-size: 28px;
+
+	text-transform: uppercase;
+}
+
+h2 {
+	font-family: 'Montserrat-SemiBold', sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+
+	text-transform: uppercase;
+}
+
+h3 {
+ font-family: 'OpenSans-SemiBold', sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+
+	text-transform: uppercase;
+}
+
+h4 {
+	font-family: 'Montserrat-Bold', sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+}
+
+strong {
+	font-family: 'Montserrat-SemiBold', sans-serif;
+	font-weight: 600;
+	font-size: 24px;
+}
+
+p {
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+}
+/* Глобальные переменные */
+:root {
+	--menu-height: 120px;
+}
+
+/* Глобальные стили */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+header footer {
+	width: 100%;
+}
+
+main {
+	padding: var(--menu-height);
+}
+
+/* Плашка меню */
+.menu-inner {
+	display: inline-block;
+
+	width: 100%;
+
+	position: fixed;
+
+	align-items: stretch;
+}
+
+.desktop-menu {
+	display: flex;
+
+	height: var(--menu-height);
+
+	justify-content: space-between;
+
+	background: rgba(255, 255, 255, 1);
+}
+
+.desktop-logo {
+	width: 250px;
+	height: 100px;
+
+	margin: 10px 10px;
+
+	background-image: url(../images/logo.svg);
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100%;
+}
+
+.desktop-menu-ui {
+	display: flex;
+
+	padding: 0px;
+
+	align-items: center;
+
+	list-style: none;
+}
+
+.desktop-menu-item {
+	margin: 0px 20px;
+}
+
+a h2 {
+	text-align: center;
+
+	color: #000000;
+}
+
+.mobile-menu {
+	display: flex;
+
+	padding: 10px;
+
+	justify-content: space-between;
+
+	background: #ffffff;
+}
+
+.mobile-logo {
+	width: 50px;
+	height: 50px;
+
+	border: 1px solid red;
+}
+
+.burger {
+	width: 50px;
+	height: 50px;
+
+	background-image: url(../images/burger.svg);
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100% 100%;	
+}
+
+/* Призыв к действию */
+.main-call-inner {
+	display: flex;
+}
+
+.call-img {
+	flex: 2;
+
+	background-image: url(../images/call-img.svg);
+	background-color: rgba(63, 61, 86, 0.2);
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100% 100%;
+}
+
+.call-action {
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+
+	background: rgba(63, 61, 86, 0.8);
+
+	justify-items: center;
+}
+
+.call-header {
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+
+	justify-content: flex-end;
+
+	padding: 10px;
+
+	color: #ffffff;
+}
+
+.call-button {
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+
+	justify-self: flex-start;
+
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.call-button h3 {
+	padding: 35px;
+
+	background: rgba(255, 255, 255, 0.95);
+
+	border: 1px solid rgba(63, 61, 86, 1);
+	border-radius: 25px;
+}
+
+/* О предоставляемом решении */
+.system-inner {
+	display: flex;
+}
+
+.system-description {
+	flex: 1;
+}
+
+.system-description-header {
+	text-transform: uppercase;
+
+	text-align:  center;
+}
+
+.system-img {
+	flex: 2;
+
+	margin-top: 35px;
+
+	background-image: url(../images/system-img.svg);
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100% 100%;
+}
+
+/* Компетенции */
+.competitions-inner {
+	display: flex;
+
+	height: 600px;
+
+	justify-content: center;
+
+	background: rgba(63, 61, 86, 0.2);
+}
+
+/* О технологии №1 */
+.about-technology-1-header {
+	text-align: center;
+}
+
+.about-technology-1-img {
+	min-height: 430px;
+	
+	background-image: url(../images/about-technology-1-img.svg);
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100% 100%;
+}
+
+/* О технологии №2 */
+.about-technology-2-inner {
+	display: flex;
+
+	flex-direction: column;
+}
+
+.cards {
+	display: flex;
+
+	flex-direction: row;
+
+	justify-content: space-evenly;
+
+	padding: 0px;
+
+	list-style: none;
+}
+
+.card {
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+
+	width: 320px;
+
+	padding: 10px;
+
+	border-radius: 25px;
+	background: rgba(63, 61, 86, 0.8);
+}
+
+.card-text p {
+	text-align: justify;
+
+	color: #ffffff;
+}
+
+.shadow {
+	min-height: 100px;
+	background-image: url(../images/shadow.svg);
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100% 100%;
+}
+
+
+
+/* Верстка на телефоны */
+@media (min-width: 360px) and (max-width: 767px) {
+	:root {
+		--menu-height: 0px;
+	}
+
+	main {
+		padding-top: 70px;
+	}
+
+	.desktop-menu, .call-img, .system-img {
+		display: none;
+	}
+
+	.system-description {
+		padding: 10px;
+	}
+
+	.about-technology-1-img {
+		background: rgba(63, 61, 86, 0.2);
+
+		border: 1px solid red;
+	}
+
+	.cards {
+		flex-direction: column;
+
+		align-items: center;
+
+		gap: 20px;
+	}
+}
+
+/* Верстка на планшеты */
+@media (min-width: 768px) and (max-width: 1023px) {
+	:root {
+		--menu-height: 0px;
+	}
+
+	h4 {
+		font-size: 20px;
+	}
+
+	p {
+		font-size: 18px;
+	}
+
+	main {
+		padding-top: 70px;
+	}
+
+	.desktop-menu {
+		display: none;
+	}
+
+	.system-description {
+		padding: 10px;
+	}
+}
+
+/* Верстка на маленькие ноутбуки */
+@media (min-width: 1024px) and (max-width: 1279px){
+	:root {
+		--menu-height: 100px;
+	}
+
+	.mobile-menu {
+		display: none;
+	}
+
+	.desktop-logo {
+		width: 200px;
+		height: 80px;
+	}
+
+	strong {
+		font-size: 20px;
+	}
+}
+
+/* Верстка на большые экраны */
+@media (min-width: 1280px) {
+	.mobile-menu {
+		display: none;
+	}
+}
