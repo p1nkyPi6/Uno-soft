@@ -115,7 +115,7 @@ main {
 }
 
 .desktop-logo {
-	width: 250px;
+	width: 300px;
 	height: 100px;
 
 	margin: 10px 10px;
@@ -157,15 +157,22 @@ a h2 {
 }
 
 .mobile-logo {
-	width: 50px;
-	height: 50px;
+	width: 100px;
+	height: 100px;
 
-	border: 1px solid red;
+	background-image: url(../images/logo-mobile.svg);
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100% 100%;	
 }
 
 .burger {
 	width: 50px;
 	height: 50px;
+
+	align-self: center;
+	margin-right: 25px;
 
 	background-image: url(../images/burger.svg);
 	background-color: #ffffff;
@@ -292,6 +299,11 @@ a h2 {
 	display: flex;
 
 	flex-direction: column;
+
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	background: rgba(63, 61, 86, 0.2);
 }
 
 .cards {
@@ -335,7 +347,457 @@ a h2 {
  background-size: 100% 100%;
 }
 
+/* Преимузества использования №1 */
+.benefits-1-inner {
+	display: flex;
 
+	flex-direction: column;
+}
+
+.benefits-1-header {
+	margin-top: 20px;
+
+	text-align: center;
+}
+
+.benefits-1-cards {
+	display: flex;
+
+	flex-direction: row;
+
+	justify-content: space-evenly;
+
+	padding: 0px;
+
+	list-style: none;
+}
+
+.benefits-1-card {
+	width: 320px;
+
+	padding: 20px;
+	margin: 20px;
+
+	color: #ffffff;
+
+	border-radius: 25px;
+	background: rgba(63, 61, 86, 0.8);
+}
+
+.benefits-1-card-logo {
+	display: flex;
+	justify-content: center;
+}
+
+.benefits-1-card-header {
+	padding: 0px 50px;
+
+	text-align: center;
+}
+
+.card-logo-1,  .card-logo-2, .card-logo-3{
+	width: 50px;
+	height: 50px;
+
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100% 100%;
+}
+
+.card-logo-1 {
+	background-image: url(../images/b-card-logo-1.svg);
+}
+
+.card-logo-2 {
+	background-image: url(../images/b-card-logo-2.svg);
+}
+
+.card-logo-3 {
+	background-image: url(../images/b-card-logo-3.svg);
+}
+
+/* Преимущества использования №2 */
+.accordion {
+	display: flex;
+
+	flex-direction: column;
+
+	flex-wrap: wrap;
+
+	justify-content: space-evenly;
+
+	height: 600px;
+
+	padding: 10px;
+}
+
+.accordion-item {
+	width: 500px;
+
+	margin: 0px;
+
+	overflow: hidden;
+}
+
+.accordion-item-input {
+	display: none;
+}
+
+.accordion-item-input:checked ~ .accordion-item {
+	order: 0;
+}
+
+.accordion-item-input:checked ~ .accordion-item-content p{
+	height: calc(100% - 50px);
+
+	padding: 10px 10px;
+	margin: 0px;
+
+	color: #000000;
+
+	background: #ffffff;
+
+	border: 1px solid #3F3D56;
+	border-radius: 30px;
+
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+
+	animation-duration: 0.5s;
+
+	animation-name: fade-in;
+}
+
+@keyframes fade-in {
+	from {
+		height: 0px;
+
+		border-top-left-radius: 30px;
+		border-top-right-radius: 30px;
+
+		color: #ffffff;
+	}
+
+	to {
+		height: calc(100% - 50px);
+
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+
+		color: #000000;
+	}
+}
+
+.accordion-item-input:checked ~ .accordion-item-trigger h3 {
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+
+	animation-duration: 0.5s;
+
+	animation-name: border-closed;
+}
+
+@keyframes border-closed {
+	from {
+		border-bottom-left-radius: 30px;
+		border-bottom-right-radius: 30px;
+	}
+
+	to {
+		border-bottom-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+}
+
+.accordion-item-trigger h3{
+	padding: 10px;
+	margin: 0px;
+
+	text-align: center;
+
+	color: #ffffff;
+
+	background: #3F3D56;
+
+	border: 1px solid #3F3D56;
+	border-radius: 30px;
+}
+
+.accordion-item-content p{
+	height: 0px;
+
+	margin: 0px;
+
+	color: #ffffff;
+}
+
+.accordion-img {
+	width: 640px;
+	height: 640px;
+
+	z-index: -1;
+
+	position: absolute;
+
+
+	align-self: flex-end;
+
+	background-image: url(../images/bird.png);
+	background-repeat: no-repeat;
+ background-position: center right;
+ background-size: 100%;
+}
+
+.accordion-image-mobile {
+	display: flex;
+
+	position: absolute;
+	left: calc(50% - 25vw);
+
+	z-index: -1;
+
+	overflow: hidden;
+}
+
+.accordion-image {
+	width: 80vw;
+	height: 80vw;
+
+	align-self: flex-end;
+
+	background-image: url(../images/bird.png);
+	background-repeat: no-repeat;
+ background-position: center right;
+ background-size: 100%;
+}
+
+/* Наши партнеры */
+.partners {
+	display: flex;
+
+	flex-direction: column;
+}
+
+.partners-header {
+	text-align: center;
+}
+
+.partner-list {
+	display: flex;
+	padding: 0px;
+
+	flex-wrap: wrap;
+
+	justify-content: space-evenly;
+
+	list-style: none;
+}
+
+.partner {
+	width: 200px;
+
+	margin: auto 20px;
+}
+
+.partner-icon-1, .partner-icon-2, .partner-icon-3 {
+	width: 200px;
+	height: 200px;
+
+	border: 1px solid red;
+}
+
+.partner-text {
+	text-align: center;
+}
+
+/* Блок о преимуществах №3 */
+.benefits-3-card {
+	display: grid;
+
+	grid-template-columns: 1fr 2fr;
+
+	grid-gap: 0px;
+
+	width: 100%;
+
+	margin-bottom: 75px;
+
+	background: rgba(63, 61, 86, 0.4);
+	border-radius: 50px;
+}
+
+.benefits-3-description {
+	align-self: center;
+
+	text-align: center;
+
+	color: #FFFFFF;
+}
+
+.benefits-3-nodes {
+	padding: 0px;
+	margin: 0px;
+
+	display: grid;
+
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-gap: 0px;
+
+	list-style: none;
+
+	background: #3F3D56;
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
+
+.node {
+	display: grid;
+
+	grid-template-columns: 100px 1fr;
+}
+
+.node-text {
+	color: #FFFFFF;
+}
+
+.node-icon {
+	width: 50px;
+	height: 50px;
+
+	align-self: center;
+	justify-self: center;
+}
+
+/* Эффект от внедрения (слайдер) */
+.slider-block {
+	background: rgba(63, 61, 86, 0.4);
+}
+
+.slider-header {
+	padding-top: 40px;
+
+	text-align: center;
+}
+
+.item-inner {
+	padding: 40px;
+}
+
+.item-illustr {
+	display: flex;
+
+	flex-direction: row;
+}
+
+.item-ill-description {
+	display: flex;
+
+	flex-direction: column;
+}
+
+.item-ill-header {
+	display: flex;
+
+	flex-direction: row;
+
+	align-items: center;
+
+ background: #3F3D56;
+ border-top-left-radius: 35px;
+	border-bottom-left-radius: 35px;
+}
+
+.item-1-ill-header-icon {
+	box-sizing: content-box;
+
+	width: 50px;
+	height: 50px;
+
+	padding: 10px;
+
+	flex-shrink: 0;
+
+	background-image: url(../images/effect-1.svg);
+	background-repeat: no-repeat;
+ background-position: center right;
+ background-size: 100% 100%;
+}
+
+.item-ill-header-text {
+	color: #ffffff;
+}
+
+p strong {
+	font-size: 20px;
+}
+
+.item-1-img {
+	width: 100%;
+	height: 400px;
+
+	border: 5px solid #3F3D56;
+
+	background-image: url(../images/slider-img.svg);
+	background-repeat: no-repeat;
+ background-position: center right;
+ background-size: 100% 100%;
+}
+
+.item-2-ill-header-icon {
+	box-sizing: content-box;
+
+	width: 50px;
+	height: 50px;
+
+	padding: 10px;
+
+	flex-shrink: 0;
+
+	background-image: url(../images/slider-item-2-icon.svg);
+	background-repeat: no-repeat;
+ background-position: center right;
+ background-size: 100% 100%;
+}
+
+.item-2-img {
+	width: 100%;
+	height: 400px;
+
+	border: 5px solid #3F3D56;
+
+	background-image: url(../images/slider-item-2-ill.svg);
+	background-repeat: no-repeat;
+ background-position: center right;
+ background-size: 100% 100%;
+}
+
+.item-3-ill-header-icon {
+	box-sizing: content-box;
+
+	width: 50px;
+	height: 50px;
+
+	padding: 10px;
+
+	flex-shrink: 0;
+
+	background-image: url(../images/slider-item-3-icon.svg);
+	background-repeat: no-repeat;
+ background-position: center right;
+ background-size: 100% 100%;
+}
+
+.item-3-img {
+	width: 100%;
+	height: 400px;
+
+	border: 5px solid #3F3D56;
+
+	background-image: url(../images/slider-item-3-ill.svg);
+	background-repeat: no-repeat;
+ background-position: center right;
+ background-size: 100% 100%;
+}
 
 /* Верстка на телефоны */
 @media (min-width: 360px) and (max-width: 767px) {
@@ -344,10 +806,10 @@ a h2 {
 	}
 
 	main {
-		padding-top: 70px;
+		padding-top: 120px;
 	}
 
-	.desktop-menu, .call-img, .system-img {
+	.desktop-menu, .call-img, .system-img, .accordion-img, .benefits-3-inner, .item-1-img, .item-2-img, .item-3-img{
 		display: none;
 	}
 
@@ -368,6 +830,69 @@ a h2 {
 
 		gap: 20px;
 	}
+
+	.benefits-1-header h2 {
+		margin-bottom: 0px;
+	}
+
+	.benefits-1-cards {
+		flex-wrap: wrap;
+
+		margin-top: 0px;
+	}
+
+	.benefits-1-card {
+		margin-top: 20px;
+	}
+
+	.accordion {
+		align-items: center;
+	}
+
+	.accordion-item {
+		width: 80vw;
+	}
+
+	.accordion-item-trigger h3 {
+		font-size: 20px;
+	}
+
+	.accordion-image-mobile {
+		left: 0px;
+	}
+
+	.accordion-image {
+		width: 100vw;
+		height: 100vw;
+	}
+
+	.benefits-3-header {
+		text-align: center;
+	}
+
+	.benefits-3-cards {
+		display: flex;
+
+		flex-direction: column;
+
+		padding: 0px 10px;
+
+		list-style: none;
+	}
+
+	.benefits-3-card-mobile {
+		padding: 10px;
+		margin: 10px;
+
+		color: #ffffff;
+
+		background: rgba(63, 61, 86, 0.8);
+		border-radius: 35px;
+	}
+
+	.item-ill-header {
+		border-radius: 35px;
+	}
 }
 
 /* Верстка на планшеты */
@@ -385,25 +910,57 @@ a h2 {
 	}
 
 	main {
-		padding-top: 70px;
+		padding-top: 120px;
 	}
 
-	.desktop-menu {
+	.desktop-menu, .accordion-img, .mobile-inner {
 		display: none;
 	}
 
 	.system-description {
 		padding: 10px;
+		margin-left: 10px;
+	}
+
+	.benefits-1-header h2 {
+		margin-bottom: 0px;
+	}
+
+	.benefits-1-cards {
+		flex-wrap: wrap;
+
+		margin-top: 0px;
+	}
+
+	.benefits-1-card {
+		margin-top: 20px;
+	}
+
+	.accordion {
+		margin: 10px;
+	}
+
+	.accordion-image-mobile {
+		left: 20vw;
+	}
+
+	.accordion-image {
+		width: 80vw;
+		height: 80vw;
+	}
+
+	.benefits-3-inner {
+		margin: 0px 20px;
 	}
 }
 
 /* Верстка на маленькие ноутбуки */
 @media (min-width: 1024px) and (max-width: 1279px){
 	:root {
-		--menu-height: 100px;
+		--menu-height: 120px;
 	}
 
-	.mobile-menu {
+	.mobile-menu, .accordion-image-mobile, .mobile-inner {
 		display: none;
 	}
 
@@ -415,11 +972,19 @@ a h2 {
 	strong {
 		font-size: 20px;
 	}
+
+	.benefits-1-card {
+		width: 250px;
+	}
+
+	.benefits-1-card-header {
+		padding: 0px;
+	}
 }
 
 /* Верстка на большые экраны */
 @media (min-width: 1280px) {
-	.mobile-menu {
+	.mobile-menu, .accordion-image-mobile, .mobile-inner {
 		display: none;
 	}
 }
