@@ -70,6 +70,7 @@ p {
 	font-weight: 400;
 	font-size: 20px;
 }
+
 /* Глобальные переменные */
 :root {
 	--menu-height: 120px;
@@ -90,7 +91,9 @@ header footer {
 }
 
 main {
-	padding: var(--menu-height);
+	padding-top: var(--menu-height);
+	padding-right: var(--menu-height);
+	padding-left: var(--menu-height);
 }
 
 /* Плашка меню */
@@ -100,6 +103,7 @@ main {
 	width: 100%;
 
 	position: fixed;
+	z-index: 1;
 
 	align-items: stretch;
 }
@@ -192,7 +196,7 @@ a h2 {
 	background-image: url(../images/call-img.svg);
 	background-color: rgba(63, 61, 86, 0.2);
 	background-repeat: no-repeat;
- background-position: center center;
+ background-position: center end;
  background-size: 100% 100%;
 }
 
@@ -220,6 +224,10 @@ a h2 {
 	padding: 10px;
 
 	color: #ffffff;
+}
+
+.call-header h1 {
+	margin: 0px;
 }
 
 .call-button {
@@ -347,7 +355,7 @@ a h2 {
  background-size: 100% 100%;
 }
 
-/* Преимузества использования №1 */
+/* Преимущества использования №1 */
 .benefits-1-inner {
 	display: flex;
 
@@ -432,6 +440,10 @@ a h2 {
 }
 
 .accordion-item {
+	display: flex;
+
+	flex-direction: column;
+
 	width: 500px;
 
 	margin: 0px;
@@ -443,12 +455,8 @@ a h2 {
 	display: none;
 }
 
-.accordion-item-input:checked ~ .accordion-item {
-	order: 0;
-}
-
 .accordion-item-input:checked ~ .accordion-item-content p{
-	height: calc(100% - 50px);
+	height: 100%;
 
 	padding: 10px 10px;
 	margin: 0px;
@@ -463,7 +471,7 @@ a h2 {
 	border-top-left-radius: 0px;
 	border-top-right-radius: 0px;
 
-	animation-duration: 0.5s;
+	animation-duration: 1s;
 
 	animation-name: fade-in;
 }
@@ -479,7 +487,7 @@ a h2 {
 	}
 
 	to {
-		height: calc(100% - 50px);
+		height: 100%;
 
 		border-top-left-radius: 0px;
 		border-top-right-radius: 0px;
@@ -599,11 +607,8 @@ a h2 {
 	margin: auto 20px;
 }
 
-.partner-icon-1, .partner-icon-2, .partner-icon-3 {
-	width: 200px;
-	height: 200px;
-
-	border: 1px solid red;
+.partn {
+	width: 100%;
 }
 
 .partner-text {
@@ -799,6 +804,219 @@ p strong {
  background-size: 100% 100%;
 }
 
+/* Форма для обратной связи */
+.contact-form-inner {
+	display: flex;
+
+	padding-top: 20px;
+	margin: 50px 0px;
+}
+
+.form-space {
+	flex: 1;
+
+	display: flex;
+
+	flex-direction: column;
+
+	align-items: center;
+}
+
+.form-group {
+	margin: 0px;
+}
+
+.my-input {
+	width: 100%;
+
+	padding: 5px;
+
+	margin-bottom: 20px;
+
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+
+	border: 5px solid #3F3D56;
+	border-radius: 20px;
+}
+
+::placeholder {
+	font-family: 'Montserrat-Regular', sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.captcha {
+	display: flex;
+
+	flex-direction: row;
+	align-items: center;
+}
+
+.form-captcha {
+	display: flex;
+
+	flex-direction: row;
+
+	flex-wrap: wrap;
+
+	justify-content: center;
+	align-items: center;
+}
+
+.form-check {
+	display: flex;
+
+	margin-top: 20px;
+
+	flex-direction: row;
+}
+
+.form-check-input {
+	flex-shrink: 0;
+
+	align-self: center;
+
+	margin-right: 10px;
+}
+
+.form-check-label p {
+	margin: 0px;
+}
+
+button h4 {
+	margin: 0px;
+}
+
+.form-img {
+	flex: 1;
+
+	background-image: url(../images/contact-form-img.svg);
+	background-repeat: no-repeat;
+ background-position: center right;
+ background-size: 100%;
+}
+
+.form-img-mobile {
+	display: flex;
+
+	position: absolute;
+
+	z-index: -1;
+
+	overflow: hidden;
+}
+
+.mobile-form-img {
+	width: 80vw;
+	height: 80vw;
+
+	background-image: url(../images/contact-form-img.svg);
+	background-repeat: no-repeat;
+ background-position: center right;
+ background-size: 100%;
+}
+
+/* О компании */
+.about-us-inner {
+	display: flex;
+
+	background: rgba(63, 61, 86, 0.2);
+}
+
+.about-img {
+	flex: 2;
+
+	background-image: url(../images/about-img.svg);
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100%;
+}
+
+.about-description {
+	flex: 1;
+
+	padding: 20px;
+}
+
+.descr-header {
+	text-align: center;
+}
+
+/* Подвал  */
+.footer-inner {
+	display: flex;
+
+	flex-direction: row;
+}
+
+.contacts-block {
+	flex: 1;
+
+	padding: 20px;
+
+	color: #ffffff;
+
+	background: rgba(63, 61, 86, 0.8);
+}
+
+.contacts-header {
+	text-align: center;
+}
+
+.contacts {
+	padding: 0px;
+
+	list-style: none;
+}
+
+.contacts li {
+	display: flex;
+
+	flex-direction: row;
+
+	justify-content: space-between;
+	align-items: center;
+}
+
+.contacts-icon {
+	display: flex;
+	box-sizing: content-box;
+
+	width: 55px;
+	height: 55px;
+
+	flex-shrink: 0;
+
+	justify-content: center;
+	align-items: center;
+
+	border: 3px solid #3F3D56;
+	border-radius: 25px;
+
+	background-color: rgba(63, 61, 86, 0.8);
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100% 100%;
+}
+
+.contacts-icon a , .icon {
+	width: 40px;
+	height: 40px;
+}
+
+.footer-img {
+	flex: 2;
+
+	border: 5px solid rgba(63, 61, 86, 0.8);
+
+	background-image: url(../images/footer.svg);
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100% 100%;
+}
+
 /* Верстка на телефоны */
 @media (min-width: 360px) and (max-width: 767px) {
 	:root {
@@ -809,7 +1027,7 @@ p strong {
 		padding-top: 120px;
 	}
 
-	.desktop-menu, .call-img, .system-img, .accordion-img, .benefits-3-inner, .item-1-img, .item-2-img, .item-3-img{
+	.desktop-menu, .call-img, .system-img, .accordion-img, .benefits-3-inner, .item-1-img, .item-2-img, .item-3-img, .form-img, .form-img-mobile, .about-img, .footer-img {
 		display: none;
 	}
 
@@ -893,6 +1111,10 @@ p strong {
 	.item-ill-header {
 		border-radius: 35px;
 	}
+
+	.form-space {
+		padding: 10px;
+	}
 }
 
 /* Верстка на планшеты */
@@ -913,7 +1135,7 @@ p strong {
 		padding-top: 120px;
 	}
 
-	.desktop-menu, .accordion-img, .mobile-inner {
+	.desktop-menu, .accordion-img, .mobile-inner, .form-img {
 		display: none;
 	}
 
@@ -952,6 +1174,20 @@ p strong {
 	.benefits-3-inner {
 		margin: 0px 20px;
 	}
+
+	.contact-form-inner {
+		justify-content: flex-end;
+	}
+
+	.form-space {
+		padding: 10px;
+
+		align-items: flex-start;
+	}
+
+	form {
+		width: 50vw;
+	}
 }
 
 /* Верстка на маленькие ноутбуки */
@@ -960,7 +1196,7 @@ p strong {
 		--menu-height: 120px;
 	}
 
-	.mobile-menu, .accordion-image-mobile, .mobile-inner {
+	.mobile-menu, .accordion-image-mobile, .mobile-inner, .form-img-mobile {
 		display: none;
 	}
 
@@ -984,7 +1220,7 @@ p strong {
 
 /* Верстка на большые экраны */
 @media (min-width: 1280px) {
-	.mobile-menu, .accordion-image-mobile, .mobile-inner {
+	.mobile-menu, .accordion-image-mobile, .mobile-inner, .form-img-mobile {
 		display: none;
 	}
 }
