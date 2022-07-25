@@ -31,8 +31,28 @@
         </ul>
       </nav>
       <div class="mobile-menu">
-        <div class="mobile-logo"></div>
-        <div class="burger"></div>
+        <div class="mobile-menu-close">
+          <div class="mobile-logo"></div>
+          <div class="burger" onclick="openMobileMenu()" type="button">
+            <img src="images/burger.svg" alt="" class="burger__img">
+          </div>
+        </div>
+        <div class="mobile-menu-open" id="mobileMenuHidden">
+          <ul class="mobile-menu-ui">
+            <li class="mobile-menu-item">
+              <a href="#system"><strong>Система</strong></a>
+            </li>
+            <li class="mobile-menu-item">
+                <a href="#benefits"><strong>Преимущества</strong></a>
+            </li>
+            <li class="mobile-menu-item">
+              <a href="#about-us"><strong>О нас</strong></a>
+            </li>
+            <li class="mobile-menu-item">
+              <a href="#contacts"><strong>Контакты</strong></a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
@@ -144,48 +164,41 @@
             </ul>
           </div>
       </div>
-      <div class="benefits-2">
-        <div class="accordion">
-          <div class="accordion-item">
-            <input type="checkbox" id="accordion-1" class="accordion-item-input">
-            <label for="accordion-1" class="accordion-item-trigger">
+      <div class="benefits-2-new">
+        <div class="bn-2-accordion">
+          <div class="accordion__item" onclick="accordionItemFunction(this)" type="button">
+            <div class="accordion__item__header">
               <h3>Высокая скорость записи</h3>
-            </label>
-            <div class="accordion-item-content">
+            </div>
+            <div class="accordion__item__text">
               <p>Более 1млрд записей в день. Буфер горячих даных</p>
             </div>
           </div>
-          <div class="accordion-item">
-            <input type="checkbox" id="accordion-2" class="accordion-item-input">
-            <label for="accordion-2" class="accordion-item-trigger">
+          <div class="accordion__item" onclick="accordionItemFunction(this)" type="button">
+            <div class="accordion__item__header">
               <h3>Большой объем данных</h3>
-            </label>
-            <div class="accordion-item-content">
+            </div>
+            <div class="accordion__item__text">
               <p>Более 2 ПБ даных в год</p>
             </div>
           </div>
-          <div class="accordion-item">
-            <input type="checkbox" id="accordion-3" class="accordion-item-input">
-            <label for="accordion-3" class="accordion-item-trigger">
+          <div class="accordion__item" onclick="accordionItemFunction(this)" type="button">
+            <div class="accordion__item__header">
               <h3>Удобная форма представления</h3>
-            </label>
-            <div class="accordion-item-content">
+            </div>
+            <div class="accordion__item__text">
               <p>Подсчёт метрик и их графическая визуализация</p>
             </div>
           </div>
-          <div class="accordion-item">
-            <input type="checkbox" id="accordion-4" class="accordion-item-input">
-            <label for="accordion-4" class="accordion-item-trigger">
+          <div class="accordion__item" onclick="accordionItemFunction(this)" type="button">
+            <div class="accordion__item__header">
               <h3>Использование ML</h3>
-            </label>
-            <div class="accordion-item-content">
+            </div>
+            <div class="accordion__item__text">
               <p>Определение аномалий, поиск патернов, предективная аналитика</p>
             </div>
           </div>
-          <div class="accordion-img"></div>
-          <div class="accordion-image-mobile">
-            <div class="accordion-image"></div>
-          </div>
+          <div class="accordion__img"></div>
         </div>
       </div>
       <div class="partners">
@@ -195,17 +208,17 @@
         <ul class="partner-list">
           <li class="partner">
             <div class="partner-icon">
-              <a href="https://baltinfocom.ru/"><img src="images/bic.png" alt="" class="partn"></a>
+              <a href="https://baltinfocom.ru/"><img src="images/bic.png" alt="" class="partn" onmouseover="partnerEmitingOn(this)" onmouseout="partnerEmitingOff(this)"></a>
             </div>
           </li>
           <li class="partner">
             <div class="partner-icon">
-              <a href="https://91.team/"><img src="images/nine-one.png" alt="" class="partn"></a>
+              <a href="https://91.team/"><img src="images/nine-one.png" alt="" class="partn" onmouseover="partnerEmitingOn(this)" onmouseout="partnerEmitingOff(this)"></a>
             </div>
           </li>
           <li class="partner">
             <div class="partner-icon">
-              <a href="https://neobit.ru/"><img src="images/neo-bit.png" alt="" class="partn"></a>
+              <a href="https://neobit.ru/"><img src="images/neo-bit.png" alt="" class="partn"  onmouseover="partnerEmitingOn(this)" onmouseout="partnerEmitingOff(this)"></a>
             </div>
           </li>
         </ul>
@@ -371,7 +384,6 @@
           <a href="#" class="slider__control" data-slide="next"></a>
         </div>
       </div>
-
       <div class="contact-form">
         <div class="contact-form-inner">
           <div class="form-space">
@@ -500,16 +512,14 @@
   <script src="js/form-processing.js"></script>
   <script>
     const form = new ItcSubmitForm('form', { isCheckValidationOnClient: true });
-
-    // при получении ответа result="success" от сервера
     document.querySelector('form').addEventListener('success', (e) => {
       const el = e.target.closest('.form-container').querySelector('.form-success');
       el.classList.remove('form-success_hide');
     });
-    // при клике на .form-success__btn
     document.querySelector('.form-success__btn').addEventListener('click', (e) => {
       form.reset();
       e.target.closest('.form-container').querySelector('.form-success').classList.add('form-success_hide');
     })
   </script>
+  <script src="js/scripts.js"></script>
 </body>
