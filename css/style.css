@@ -71,6 +71,10 @@ p {
 	font-size: 20px;
 }
 
+q {
+	quotes: "«" "»";
+}
+
 /* Стандартное оформление ссылок */
 * a {
 	text-decoration: none;
@@ -512,13 +516,15 @@ a h2 {
 .competition-list-item-header {
 	display: flex;
 
+	flex-direction: row;
+
 	width: 70px;
 	height: 70px;
 
 	flex-shrink: 0;
 
 	align-items: center;
- justify-content: center;
+ justify-content: flex-start;
 
 	color: rgba(255, 255, 255, 0);
 
@@ -526,10 +532,22 @@ a h2 {
 	border-radius: 35px;
 }
 
+.header-icon {
+	flex-shrink: 0;
+
+	width: 50px;
+	height: 50px;
+
+	margin-left: 7px;
+
+	border: 1px solid red;
+}
+
 .competition-list-item-header h3 {
 	display: flex;
 
 	margin: 0px;
+	margin-left: 20px;
 
 	justify-content: center;
 }
@@ -592,6 +610,27 @@ a h2 {
 		height: 70px;
 
 		border: 3px solid rgba(63, 61, 86, 1);
+	}
+}
+
+.competition-list-item.show .header-icon {
+	width: 50px;
+	height: 50px;
+
+	animation-name: icon-race;
+
+	animation-duration: 1s;
+}
+
+@keyframes icon-race {
+	from {
+		width: 0px;
+		height: 0px;
+	}
+
+	to {
+		width: 50px;
+		height: 50px;
 	}
 }
 
@@ -843,8 +882,6 @@ a h2 {
 }
 
 .card-text p {
-	text-align: justify;
-
 	color: #ffffff;
 }
 
@@ -994,7 +1031,7 @@ a h2 {
 	z-index: -1;
 
 	left: 25%;
-	top: 25%;
+	top: calc(25%);
 
 	width: 50%;
 	height: 50%;
@@ -1268,6 +1305,7 @@ a h2 {
 }
 
 .node-text {
+	align-self: center;
 	color: #FFFFFF;
 }
 
@@ -1275,6 +1313,7 @@ a h2 {
 	width: 50px;
 	height: 50px;
 
+	
 	align-self: center;
 	justify-self: center;
 }
@@ -1318,13 +1357,21 @@ a h2 {
 	border-bottom-left-radius: 35px;
 }
 
+.item-ill-header-text {
+	color: #ffffff;
+}
+
+p strong {
+	font-size: 20px;
+}
+
 .item-1-ill-header-icon {
 	box-sizing: content-box;
 
-	width: 50px;
-	height: 50px;
+	width: 70px;
+	height: 70px;
 
-	padding: 10px;
+	margin: 0px 10px;
 
 	flex-shrink: 0;
 
@@ -1332,14 +1379,6 @@ a h2 {
 	background-repeat: no-repeat;
  background-position: center right;
  background-size: 100% 100%;
-}
-
-.item-ill-header-text {
-	color: #ffffff;
-}
-
-p strong {
-	font-size: 20px;
 }
 
 .item-1-img {
@@ -1357,10 +1396,10 @@ p strong {
 .item-2-ill-header-icon {
 	box-sizing: content-box;
 
-	width: 50px;
-	height: 50px;
+	width: 70px;
+	height: 70px;
 
-	padding: 10px;
+	margin: 0px 10px;
 
 	flex-shrink: 0;
 
@@ -1385,10 +1424,10 @@ p strong {
 .item-3-ill-header-icon {
 	box-sizing: content-box;
 
-	width: 50px;
-	height: 50px;
+	width: 70px;
+	height: 70px;
 
-	padding: 10px;
+	margin: 0px 10px;
 
 	flex-shrink: 0;
 
@@ -1546,8 +1585,40 @@ button h4 {
 	padding: 20px;
 }
 
+
 .descr-header {
+	flex: 1;
 	text-align: center;
+}
+
+.descr-strong-text {
+	text-align: center;
+}
+
+/* Достижения */
+.goodroads-inner {
+	display: flex;
+
+	margin: 50px 0px;
+}
+
+.goodroads-descr {
+	flex: 1;
+
+	margin-right: 20px;
+}
+
+.goodroads-descr-header {
+	text-align: center;
+}
+
+.goodroads-img {
+	flex: 2;
+
+	background-image: url(../images/GoodRoads.png);
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: auto 100%;
 }
 
 /* Подвал  */
@@ -1637,7 +1708,19 @@ button h4 {
 		text-decoration: none;
 	}
 
-	.desktop-menu, .call-img, .system-img, .benefits-3-inner, .item-1-img, .item-2-img, .item-3-img, .form-img, .form-img-mobile, .about-img, .footer-img {
+	.desktop-menu,
+	.call-img,
+	.system-img,
+	.benefits-3-inner,
+	.item-1-img,
+	.item-2-img,
+	.item-3-img, 
+ .form-img,
+ .form-img-mobile,
+ .about-img, 
+ .goodroads-img,
+ .footer-img
+ {
 		display: none;
 	}
 

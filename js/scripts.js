@@ -8,10 +8,45 @@ window.addEventListener('resize', () => {
     competitionPosCalc();
 });
 
-/*window.addEventListener('scroll', () => {
+let paralaxImages = document.querySelectorAll(".paralax-img");
 
-    let list = document.
-});*/
+let paralaxStartPos = new Array();
+let paralaxEndPos = new Array();
+let scrollPosition = new Array();
+
+paralaxImages.forEach((item) => {
+
+    paralaxStartPos.push(window.pageYOffset + item.getBoundingClientRect().y - window.innerHeight);
+    paralaxEndPos.push(window.pageYOffset + item.getBoundingClientRect().y + item.getBoundingClientRect().height + window.innerHeight);
+    scrollPosition.push(0);
+});
+
+window.addEventListener('scroll', () => {
+
+    paralaxImages.forEach((item, number) => {
+
+        if ((window.pageYOffset > paralaxStartPos[number]) && (window.pageYOffset < paralaxEndPos[number])) {
+
+            let direction = 0;
+
+            if (window.pageYOffset > scrollPosition[number])
+            {
+                direction = -2;
+            }
+            else {
+
+                direction = 2;
+            }
+
+            scrollPosition[number] = window.pageYOffset;
+
+            let oldPositionY = parseInt(getComputedStyle(item).getPropertyValue("top"));
+
+            item.style.top = oldPositionY + direction + "px";
+        }
+    });
+    
+});
 
 function linkStylish() {
 
@@ -260,12 +295,7 @@ function competitionsCircleOnLoad() {
 }
 
 function itemActivator(item) {
-
-    if (item.classList.contains("show")) {
-
-        item.classList.remove("show");
-    }
-
+    
     if (!item.classList.contains("active")) {
 
         let listItmes = competitionsList.querySelectorAll(".competition-list-item");
@@ -291,8 +321,6 @@ function itemActivator(item) {
         item.classList.remove("active");
         item.classList.add("inactive"); 
     }
-
-    console.log(item.classList);
 
     competitionPosCalc();
 }
