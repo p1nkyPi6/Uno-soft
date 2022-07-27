@@ -457,11 +457,336 @@ a h2 {
 .competitions-inner {
 	display: flex;
 
-	height: 600px;
+	flex-direction: column;
 
 	justify-content: center;
+	align-items: center;
+
+	padding: 10px;
 
 	background: rgba(63, 61, 86, 0.2);
+}
+
+.competitions-list {
+	display: flex;
+
+	flex-direction: column;
+
+	position: relative;
+
+	width: 30%;
+
+	padding:  0px;
+	margin: 20px 0px;
+
+	align-self: flex-end;
+
+	transform: rotate(-90deg);
+	transform-origin: left bottom;
+
+	list-style: none;
+}
+
+.competition-list-item {
+	--position-X-start: 0px;
+	--position-X-end: 0px;
+
+	--position-Y-start: 0px;
+	--position-Y-end: 0px;
+
+	display: flex;
+
+	flex-direction: column;
+
+	position: absolute;
+
+	left: var(--position-X-start);
+	bottom: 0px;
+
+	width: 70px;
+	height: 70px;
+
+	overflow: hidden;
+}
+
+.competition-list-item-header {
+	display: flex;
+
+	width: 70px;
+	height: 70px;
+
+	flex-shrink: 0;
+
+	align-items: center;
+ justify-content: center;
+
+	color: rgba(255, 255, 255, 0);
+
+	border: 3px solid rgba(63, 61, 86, 0);
+	border-radius: 35px;
+}
+
+.competition-list-item-header h3 {
+	display: flex;
+
+	margin: 0px;
+
+	justify-content: center;
+}
+
+.competition-list-item-text {
+	height: 0px;
+
+	margin: 0px 35px;
+	padding: 0px 20px;
+
+	color: rgba(255, 255, 255, 0);
+
+	border: 1px solid rgba(63, 61, 86, 0);
+
+	border-top-width: 0px;
+	border-bottom-left-radius: 35px;
+	border-bottom-right-radius: 35px;
+}
+
+.competitions-list.show {
+	align-self: flex-start;
+
+	transform: rotate(0deg);
+
+	animation-name: rotate-circles;
+	animation-duration: 1s;
+}
+
+@keyframes rotate-circles {
+	from {
+		transform: rotate(-90deg);
+	}
+
+	to {
+		transform: rotate(0deg);
+	}
+}
+
+.competition-list-item.show .competition-list-item-header{
+	width: 70px;
+	height: 70px;
+
+	border: 3px solid rgba(63, 61, 86, 1);
+
+	animation-name: item-race;
+
+	animation-duration: 1s;
+}
+
+@keyframes item-race {
+	from {
+		width: 0px;
+		height: 0px;
+
+		border: 3px solid rgba(63, 61, 86, 0);
+	}
+
+	to {
+		width: 70px;
+		height: 70px;
+
+		border: 3px solid rgba(63, 61, 86, 1);
+	}
+}
+
+.competition-list-item.active {
+	left: var(--position-X-end);
+	bottom: var(--position-Y-end);
+
+	width: 220%;
+	height: 100px;
+
+	overflow: visible;
+
+	animation-name: item-activation;
+	animation-duration: 1s;
+}
+
+@keyframes item-activation {
+	from {
+		left: var(--position-X-start);
+		bottom: var(--position-Y-start);
+
+		width: 70px;
+		height: 70px;
+	}
+
+	50% {
+		left: var(--position-X-start);
+		bottom: var(--position-Y-start);
+
+		width: 70px;
+		height: 100px;
+	}
+
+	to {
+		left: var(--position-X-end);
+		bottom: var(--position-Y-end);
+
+		width: 220%;
+		height: 100px;
+	}
+}
+
+.competition-list-item.active .competition-list-item-header {
+	width: 100%;
+
+	color: rgba(255, 255, 255, 1);
+
+	border: 3px solid rgba(63, 61, 86, 1);
+
+	background: rgba(63, 61, 86, 1);
+
+	animation-name: header-active-animation;
+
+	animation-duration: 1.5s;
+}
+
+@keyframes header-active-animation {
+	from {
+		width: 70px;
+
+		color: rgba(255, 255, 255, 0);
+
+		background: rgba(63, 61, 86, 0);
+	}
+
+	33% {
+		width: 70px;
+
+		color: rgba(255, 255, 255, 0);
+
+		background: rgba(63, 61, 86, 1);
+	}
+
+	66% {
+		color: rgba(255, 255, 255, 0);
+	}
+
+	to {
+		width: 100%;
+
+		color: rgba(255, 255, 255, 1);
+
+		background: rgba(63, 61, 86, 1);
+	}
+}
+
+.competition-list-item.active .competition-list-item-text {
+	height: 72px;
+
+	color: rgba(0, 0, 0, 1);
+
+	border-color: rgba(63, 61, 86, 1);
+
+	animation-name: text-active-animation;
+
+	animation-duration: 2s;
+}
+
+@keyframes text-active-animation {
+	from {
+		height: 0;
+
+		color: rgba(0, 0, 0, 0);
+
+		border-color: rgba(63, 61, 86, 0);
+	}
+
+	50% {
+		height: 0;
+
+		color: rgba(0, 0, 0, 0);
+
+		border-color: rgba(63, 61, 86, 0);
+	}
+
+	75% {
+		color: rgba(0, 0, 0, 0);
+	}
+
+	to {
+		height: 72px;
+
+		color: rgba(0, 0, 0, 1);
+
+		border-color: rgba(63, 61, 86, 1);
+	}
+}
+
+.competition-list-item.inactive{
+	left: var(--position-X-start);
+	bottom: var(--position-Y-start);
+
+	width: 70px;
+	height: 70px;
+
+	animation-name: item-disactivation;
+	animation-duration: 1s;
+}
+
+@keyframes item-disactivation {
+	from {
+		left: var(--position-X-end);
+		bottom: var(--position-Y-end);
+
+		width: 220%;
+		height: 100px;
+	}
+
+	50% {
+		left: var(--position-X-end);
+		bottom: var(--position-Y-end);
+
+		width: 220%;
+		height: 100px;
+	}
+
+	to {
+		left: var(--position-X-start);
+		bottom: var(--position-Y-start);
+
+		width: 70px;
+		height: 70px;
+	}
+}
+
+.competition-list-item.inactive .competition-list-item-header {
+	width: 70px;
+
+	color: rgba(255, 255, 255, 0);
+
+	border: 3px solid rgba(63, 61, 86, 1);
+
+	background: rgba(63, 61, 86, 0);
+
+	animation-name: header-inactive-animation;
+
+	animation-duration: 0.5s;
+}
+
+@keyframes header-inactive-animation {
+	from {
+		width: 100%;
+
+		color: rgba(255, 255, 255, 1);
+
+		background: rgba(63, 61, 86, 1);
+	}
+
+	to {
+		width: 70px;
+
+		color: rgba(255, 255, 255, 0);
+
+		background: rgba(63, 61, 86, 0);
+	}
 }
 
 /* О технологии №1 */
@@ -1318,6 +1643,59 @@ button h4 {
 
 	.system-description {
 		padding: 10px;
+	}
+
+	.competition-list-item-header {
+		display: flex;
+
+		padding: 10px;
+
+		align-items: stretch;
+	}
+
+	.competition-list-item-header h3{
+		display: flex;
+
+		align-items: center;
+	}
+
+	.competition-list-item.active {
+		left: var(--position-X-end);
+		top: var(--position-Y-end);
+	
+		width: 220%;
+		height: 100px;
+	
+		overflow: visible;
+	
+		animation-name: item-activation;
+		animation-duration: 1s;
+	}
+	
+	@keyframes item-activation {
+		from {
+			left: var(--position-X-start);
+			top: var(--position-Y-start);
+	
+			width: 70px;
+			height: 70px;
+		}
+	
+		50% {
+			left: var(--position-X-start);
+			top: var(--position-Y-start);
+	
+			width: 70px;
+			height: 100px;
+		}
+	
+		to {
+			left: var(--position-X-end);
+			top: var(--position-Y-end);
+	
+			width: 220%;
+			height: 100px;
+		}
 	}
 
 	.about-technology-1-img {
