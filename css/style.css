@@ -1,34 +1,3 @@
-/* Подключение и настройка шрифтов */
-@font-face {
-	font-family: "Montserrat-Regular";
-	src: url(../fonts/Montserrat-Regular.ttf) format(truetype);
-}
-
-@font-face {
-	font-family: "Montserrat-SemiBold";
-	src: url(../fonts/Montserrat-SemiBold.ttf) format(truetype);
-}
-
-@font-face {
-	font-family: "Montserrat-Bold";
-	src: url(../fonts/Montserrat-Bold.ttf) format(truetype);
-}
-
-@font-face {
-	font-family: "OpenSans-SemiBold";
-	src: url(../fonts/Montserrat-SemiBold.ttf) format(truetype);
-}
-
-@font-face {
-	font-family: "OpenSans-Bold";
-	src: url(../fonts/Montserrat-Bold.ttf) format(truetype);
-}
-
-@font-face {
-	font-family: "OpenSans-ExtraBold";
-	src: url(../fonts/Montserrat-ExtraBold.ttf) format(truetype);
-}
-
 h1 {
 	font-family: 'OpenSans-ExtraBold', sans-serif;
 	font-weight: 800;
@@ -38,7 +7,7 @@ h1 {
 }
 
 h2 {
-	font-family: 'Montserrat-SemiBold', sans-serif;
+	font-family: 'Alegreya Sans SC';
 	font-weight: 600;
 	font-size: 24px;
 
@@ -46,7 +15,7 @@ h2 {
 }
 
 h3 {
- font-family: 'OpenSans-SemiBold', sans-serif;
+ font-family: 'Alegreya Sans SC';
 	font-weight: 600;
 	font-size: 24px;
 
@@ -54,7 +23,7 @@ h3 {
 }
 
 h4 {
-	font-family: 'Montserrat-Bold', sans-serif;
+	font-family: 'Alegreya Sans SC';
 	font-weight: 700;
 	font-size: 24px;
 }
@@ -66,8 +35,10 @@ strong {
 }
 
 p {
-	font-family: 'Montserrat-Regular', sans-serif;
-	font-weight: 400;
+	font-family: /*'Alegreya Sans SC'*/
+	'Jura'
+	/*'Source Sans Pro'*/;
+	font-weight: 500;
 	font-size: 20px;
 }
 
@@ -107,6 +78,8 @@ q {
 /* Глобальные стили */
 * {
 	box-sizing: border-box;
+
+	background-color: rgba(255, 255, 255, 0);
 }
 
 body {
@@ -543,7 +516,7 @@ a h2 {
 	border: 1px solid red;
 }
 
-.competition-list-item-header h3 {
+.competition-list-item-header h4 {
 	display: flex;
 
 	margin: 0px;
@@ -718,7 +691,7 @@ a h2 {
 }
 
 .competition-list-item.active .competition-list-item-text {
-	height: 72px;
+	height: auto;
 
 	color: rgba(0, 0, 0, 1);
 
@@ -731,16 +704,12 @@ a h2 {
 
 @keyframes text-active-animation {
 	from {
-		height: 0;
-
 		color: rgba(0, 0, 0, 0);
 
 		border-color: rgba(63, 61, 86, 0);
 	}
 
 	50% {
-		height: 0;
-
 		color: rgba(0, 0, 0, 0);
 
 		border-color: rgba(63, 61, 86, 0);
@@ -751,8 +720,6 @@ a h2 {
 	}
 
 	to {
-		height: 72px;
-
 		color: rgba(0, 0, 0, 1);
 
 		border-color: rgba(63, 61, 86, 1);
@@ -833,13 +800,40 @@ a h2 {
 	text-align: center;
 }
 
-.about-technology-1-img {
-	min-height: 430px;
-	
-	background-image: url(../images/about-technology-1-img.svg);
-	background-repeat: no-repeat;
- background-position: center center;
- background-size: 100% 100%;
+.tabs {
+	display: flex;
+
+	flex-direction: column;
+}
+
+.content {
+	display: flex;
+
+	flex-direction: row;
+}
+
+.content-block {
+	display: none;
+}
+
+.content-block.open{
+	display: block;
+}
+
+.labels {
+	display: flex;
+
+	flex-direction: row;
+
+	justify-content: space-evenly;
+}
+
+/*.labels input {
+	display: none;
+}*/
+
+.labels label {
+	cursor: pointer;
 }
 
 /* О технологии №2 */
@@ -1731,15 +1725,38 @@ button h4 {
 	.competition-list-item-header {
 		display: flex;
 
-		padding: 10px;
+		padding: 0px;
 
 		align-items: stretch;
 	}
 
-	.competition-list-item-header h3{
+	.header-icon {
+
+		margin: 7px;
+	}
+
+	.competition-list-item-header h4{
 		display: flex;
 
+		margin: 0px;
+
 		align-items: center;
+	}
+
+	.competition-list-item-text {
+		height: 0px;
+
+		margin: 0px;
+		margin-left: 35px;
+		padding-left: 0px 20px;
+
+		color: rgba(255, 255, 255, 0);
+
+		border: 1px solid rgba(63, 61, 86, 0);
+
+		border-top-width: 0px;
+		border-bottom-left-radius: 35px;
+		border-bottom-right-radius: 35px;
 	}
 
 	.competition-list-item.active {
@@ -1747,7 +1764,7 @@ button h4 {
 		top: var(--position-Y-end);
 	
 		width: 220%;
-		height: 100px;
+		height: auto;
 	
 		overflow: visible;
 	
@@ -1777,7 +1794,101 @@ button h4 {
 			top: var(--position-Y-end);
 	
 			width: 220%;
+			height: auto;
+		}
+	}
+
+	.competition-list-item.active .competition-list-item-header {
+		width: 100%;
+
+		color: rgba(255, 255, 255, 1);
+
+		border: 3px solid rgba(63, 61, 86, 1);
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+
+		background: rgba(63, 61, 86, 1);
+
+		animation-name: header-active-animation;
+
+		animation-duration: 1.5s;
+	}
+
+	@keyframes header-active-animation {
+		from {
+			width: 70px;
+
+			color: rgba(255, 255, 255, 0);
+
+			border-top-right-radius: 35px;
+			border-bottom-right-radius: 35px;
+
+			background: rgba(63, 61, 86, 0);
+		}
+
+		33% {
+			width: 70px;
+
+			color: rgba(255, 255, 255, 0);
+
+			border-top-right-radius: 35px;
+			border-bottom-right-radius: 35px;
+
+			background: rgba(63, 61, 86, 1);
+		}
+
+		66% {
+			color: rgba(255, 255, 255, 0);
+
+			border-top-right-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+
+		to {
+			width: 100%;
+
+			color: rgba(255, 255, 255, 1);
+
+			background: rgba(63, 61, 86, 1);
+		}
+	}
+
+	.competition-list-item.inactive {
+		left: var(--position-X-start);
+		top: var(--position-Y-start);
+	
+		width: 70px;
+		height: 70px;
+	
+		overflow: hiden;
+	
+		animation-name: item-inactivation;
+		animation-duration: 1s;
+	}
+	
+	@keyframes item-inactivation {
+		from {
+			left: var(--position-X-end);
+			top: var(--position-Y-end);
+	
+			width: 220%;
+			height: auto;
+		}
+	
+		50% {
+			left: var(--position-X-end);
+			top: var(--position-Y-end);
+	
+			width: 70px;
 			height: 100px;
+		}
+	
+		to {
+			left: var(--position-X-start);
+			top: var(--position-Y-start);
+	
+			width: 70px;
+			height: 70px;
 		}
 	}
 

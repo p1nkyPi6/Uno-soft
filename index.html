@@ -4,6 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Подключение шрифтов -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Alegreya Sans SC -->
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@700&display=swap" rel="stylesheet">
+  <!-- Jura -->
+  <link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@500;600&display=swap" rel="stylesheet">
+  <!-- Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/chief-slider.min.css">
   <link rel="stylesheet" href="css/form-style.css">
   <link rel="stylesheet" href="css/style.css">
@@ -95,7 +108,7 @@
                 <div class="header-icon">
                   
                 </div>
-                <h3>Компетенция 1</h3>
+                <h4>Компетенция 1</h4>
               </div>
               <div class="competition-list-item-text">
                 <p>Текст компетенции 1</p>
@@ -106,7 +119,7 @@
                 <div class="header-icon">
                   
                 </div>
-                <h3>Компетенция 2</h3>
+                <h4>Компетенция 2</h4>
               </div>
               <div class="competition-list-item-text">
                 <p>Текст компетенции 2</p>
@@ -117,7 +130,7 @@
                 <div class="header-icon">
                   
                 </div>
-                <h3>Компетенция 3</h3>
+                <h4>Компетенция 3</h4>
               </div>
               <div class="competition-list-item-text">
                 <p>Текст компетенции 3</p>
@@ -128,7 +141,7 @@
                 <div class="header-icon">
                   
                 </div>
-                <h3>Компетенция 4</h3>
+                <h4>Компетенция 4</h4>
               </div>
               <div class="competition-list-item-text">
                 <p>Текст компетенции 4</p>
@@ -142,7 +155,36 @@
           <div class="about-technology-1-header">
             <h2>Суть технологии</h2>
           </div>
-          <div class="about-technology-1-img"></div>
+          <!-- <div class="about-technology-1-img"></div> -->
+          <div class="tabs">
+            <div class="content">
+              <div class="content-block" id="content-1">
+                Содержимое 1...
+              </div>
+              <div class="content-block" id="content-2">
+                Содержимое 2...
+              </div>
+              <div class="content-block" id="content-3">
+                Содержимое 3...
+              </div>
+            </div>
+            <div class="labels">
+              <input type="radio" name="tab-btn" id="tab-btn-1" value="content-1" checked>
+              <label for="tab-btn-1">
+                <h4>Вкладка 1</h4>
+              </label>
+
+              <input type="radio" name="tab-btn" id="tab-btn-2" value="content-2">
+              <label for="tab-btn-2">
+                <h4>Вкладка 2</h4>
+              </label>
+
+              <input type="radio" name="tab-btn" id="tab-btn-3" value="content-3">
+              <label for="tab-btn-3">
+                <h4>Вкладка 3</h4>
+              </label>
+            </div>
+          </div>
         </div>
       </div>
       <div class="about-technology-2">

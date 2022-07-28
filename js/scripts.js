@@ -3,6 +3,18 @@ linkStylish();
 competitionsCircleOnLoad();
 competitionPosCalc();
 
+openTab();
+
+let inputs = document.querySelectorAll("input");
+
+inputs.forEach(item => {
+
+    item.addEventListener("click", () => {
+
+        openTab();
+    });
+});
+
 window.addEventListener('resize', () => {
 
     competitionPosCalc();
@@ -237,6 +249,8 @@ function competitionPosCalc() {
         let temp = 0;
         listItmes.forEach((item, number) => {
     
+            item.style.removeProperty('top');
+
             temp = (listItmes.length - 1) - number;
     
             item.style.setProperty("--position-X-start", Math.round(radius * Math.cos((degOffset * temp) * Math.PI / 180))+ "px");
@@ -249,6 +263,7 @@ function competitionPosCalc() {
     
                 item.style.left = getComputedStyle(item).getPropertyValue('--position-X-end');
                 item.style.bottom = getComputedStyle(item).getPropertyValue('--position-Y-end');
+
             }
             else if (!item.classList.contains("active")){
     
@@ -263,7 +278,7 @@ function competitionsCircleOnLoad() {
 
     let options = {
         root: null,
-        threshold: [0.8]
+        threshold: [0.1]
     }
 
     let observer = new IntersectionObserver((item) => {
@@ -277,21 +292,22 @@ function competitionsCircleOnLoad() {
                     change.target.classList.add('show');
                 }
 
-                if (!competitionsList.classList.contains("show")) {
+                let elements = document.querySelectorAll('.competition-list-item');
 
-                    competitionsList.classList.add('show');
-                }
+                elements.forEach(item => {
+
+                    if (!item.classList.contains("show")) {
+
+                        item.classList.add('show');
+                    }
+                })
 
             }
         });
 
     }, options);
 
-    let elements = document.querySelectorAll('.competition-list-item');
-
-    for (let element of elements) {
-        observer.observe(element);
-    }
+    observer.observe(competitionsList);
 }
 
 function itemActivator(item) {
@@ -323,6 +339,29 @@ function itemActivator(item) {
     }
 
     competitionPosCalc();
+}
+
+function openTab() {
+
+    let input_checks = document.querySelectorAll("input");
+
+    input_checks.forEach(item => {
+
+        if (/content-[1-9][0-9]*/.test(item.value)) {
+            
+            if (document.getElementById(item.value).classList.contains("open")) {
+
+                document.getElementById(item.value).classList.remove("open");
+            }
+        }
+    })
+
+    input_checks = document.querySelectorAll("input:checked");
+
+    input_checks.forEach(item => {
+
+        document.getElementById(item.value).classList.add("open");
+    })
 }
 
 function accordionItemFunction(item) {
