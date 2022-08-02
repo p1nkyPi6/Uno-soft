@@ -807,9 +807,14 @@ a h2 {
 }
 
 .content {
-	display: flex;
+	height: 65vh;
 
-	flex-direction: row;
+	padding: 20px;
+
+	border: 1px solid rgba(63, 61, 86, 0.2);
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom: 0px;
 }
 
 .content-block {
@@ -817,7 +822,32 @@ a h2 {
 }
 
 .content-block.open{
-	display: block;
+	display: flex;
+
+	flex-direction: row;
+}
+
+.content-description {
+	flex: 1;
+
+	height: 65vh;
+}
+
+.content-header {
+	text-align: center;
+}
+
+.content-text>ul>li p strong{
+	font-size: 20px;
+}
+
+.content-img {
+	flex: 1;
+
+	background-image: url(../images/shadow.svg);
+	background-repeat: no-repeat;
+ background-position: center center;
+ background-size: 100% 100%;
 }
 
 .labels {
@@ -825,16 +855,28 @@ a h2 {
 
 	flex-direction: row;
 
-	justify-content: space-evenly;
+	justify-content: space-between;
 }
 
-/*.labels input {
+.labels input {
 	display: none;
-}*/
+}
 
 .labels label {
+	width: 100%;
+
+	text-align: center;
+
 	cursor: pointer;
+
+	border: 1px solid rgba(63, 61, 86, 0.2);
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
 }
+
+.labels label.open {
+	border-top: 0px;
+} 
 
 /* О технологии №2 */
 .about-technology-2-inner {
@@ -1005,6 +1047,8 @@ a h2 {
 }
 
 .accordion__item__header h3 {
+	width: 100%;
+
 	margin: 0px;
 }
 
@@ -1025,7 +1069,7 @@ a h2 {
 	z-index: -1;
 
 	left: 25%;
-	top: calc(25%);
+	top: 25%;
 
 	width: 50%;
 	height: 50%;
@@ -1461,6 +1505,9 @@ p strong {
 	align-items: center;
 }
 
+form {
+	width: 500px;
+}
 .form-group {
 	margin: 0px;
 }
@@ -1713,7 +1760,8 @@ button h4 {
  .form-img-mobile,
  .about-img, 
  .goodroads-img,
- .footer-img
+ .footer-img,
+ .content-img
  {
 		display: none;
 	}
@@ -1920,6 +1968,33 @@ button h4 {
 		margin-top: 20px;
 	}
 
+	.content {
+		height: 60vh;
+	}
+
+	.content-text>ul>li>p {
+		margin: 5px 0px;
+	}
+
+	.labels {
+		flex-wrap: wrap;
+	}
+
+	label h4 {
+		margin: 5px 0px;
+	}
+
+	label {
+		border: 1px solid rgba(63, 61, 86, 0.2);
+		border-radius: 20px;
+	}
+
+	label .open {
+		border: 1px solid rgba(63, 61, 86, 0.2);
+		border-radius: 20px;
+		border-top: 1px solid rgba(63, 61, 86, 0.2);
+	}
+
 	.benefits-3-header {
 		text-align: center;
 	}
@@ -1992,6 +2067,10 @@ button h4 {
 	.accordion__img {
 		background: #ffffff;
 	}
+
+	form {
+		width: 340px;
+	}
 }
 
 /* Верстка на планшеты */
@@ -2037,6 +2116,14 @@ button h4 {
 
 	.benefits-1-card {
 		margin-top: 20px;
+	}
+
+	.content {
+		height: 60vh;
+	}
+
+	.content-text>ul>li>p {
+		margin: 5px 0px;
 	}
 
 	.benefits-3-inner {
@@ -2091,6 +2178,14 @@ button h4 {
 
 	strong {
 		font-size: 20px;
+	}
+
+	.content {
+		height: 60vh;
+	}
+
+	.content-text>ul>li>p {
+		margin: 5px 0px;
 	}
 
 	.benefits-1-card {

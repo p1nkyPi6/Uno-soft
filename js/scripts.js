@@ -25,12 +25,14 @@ let paralaxImages = document.querySelectorAll(".paralax-img");
 let paralaxStartPos = new Array();
 let paralaxEndPos = new Array();
 let scrollPosition = new Array();
+let itemStartPos = new Array();
 
-paralaxImages.forEach((item) => {
+paralaxImages.forEach((item, number) => {
 
-    paralaxStartPos.push(window.pageYOffset + item.getBoundingClientRect().y - window.innerHeight);
-    paralaxEndPos.push(window.pageYOffset + item.getBoundingClientRect().y + item.getBoundingClientRect().height + window.innerHeight);
+    paralaxStartPos.push(window.pageYOffset + item.getBoundingClientRect().y - window.innerHeight/2);
+    paralaxEndPos.push(window.pageYOffset + item.getBoundingClientRect().y + item.getBoundingClientRect().height + window.innerHeight/2);
     scrollPosition.push(0);
+    itemStartPos.push(item.style.top);
 });
 
 window.addEventListener('scroll', () => {
@@ -56,8 +58,11 @@ window.addEventListener('scroll', () => {
 
             item.style.top = oldPositionY + direction + "px";
         }
+        else {
+
+            item.style.top = itemStartPos[number];
+        }
     });
-    
 });
 
 function linkStylish() {
@@ -353,6 +358,13 @@ function openTab() {
 
                 document.getElementById(item.value).classList.remove("open");
             }
+
+            let target = document.querySelector("." + item.value);
+
+            if (target.classList.contains("open")) {
+
+                target.classList.remove("open");
+            }
         }
     })
 
@@ -361,6 +373,9 @@ function openTab() {
     input_checks.forEach(item => {
 
         document.getElementById(item.value).classList.add("open");
+
+        let target = document.querySelector("." + item.value);
+        target.classList.add("open");
     })
 }
 
